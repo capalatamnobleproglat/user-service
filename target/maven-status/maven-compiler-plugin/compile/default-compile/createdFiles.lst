@@ -1,0 +1,11 @@
+com\att\userservice\mapper\UserDtoMapperImpl.class
+com\att\userservice\service\UserServiceImpl.class
+com\att\userservice\service\UserService.class
+com\att\userservice\UserServiceApplication.class
+com\att\userservice\dto\UserDto.class
+com\att\userservice\mapper\UserMapper.class
+com\att\userservice\repository\UserRepository.class
+com\att\userservice\controller\UserController.class
+com\att\userservice\mapper\UserMapperImpl.class
+com\att\userservice\mapper\UserDtoMapper.class
+com\att\userservice\model\User.class
