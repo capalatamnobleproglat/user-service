@@ -2,14 +2,24 @@ package com.att.userservice.controller;
 
 import com.att.userservice.dto.UserDto;
 import com.att.userservice.service.UserService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RefreshScope
 @RequestMapping("/users")
 public class UserController {
+
+    private static final Logger logger = LoggerFactory.getLogger(UserController.class);
+
+    @Value("${example.property}")
+    private String exampleProperty;
 
     private final UserService userService;
 
@@ -30,6 +40,9 @@ public class UserController {
 
     @GetMapping("/{id}")
     public UserDto getUserById(@PathVariable Long id) throws ChangeSetPersister.NotFoundException {
+        logger.info("exampleProperty: {}", exampleProperty);
+        // int errorOperation = 0/0;
+
         return userService.getUserById(id);
     }
 
