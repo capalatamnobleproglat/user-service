@@ -1,6 +1,19 @@
 spring:
   application:
     name: user-service
+  profiles:
+    active: development
+  datasource:
+    url: jdbc:postgresql://localhost:5432/user_db
+    username: user_ms
+    password: 12345
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  cloud:
+    config:
+      enabled: false
 
 server:
   port: 8081
